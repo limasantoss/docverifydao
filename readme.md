@@ -2,7 +2,7 @@
 
 ## 1. Visão Geral
 
-O **DocVerifyDAO** é um MVP acadêmico de protocolo descentralizado desenvolvido para a tarefa da Unidade 1, Capítulo 5 — Desenvolvimento de Protocolo Web3 Completo com Deploy em Testnet.
+O **DocVerifyDAO** é um MVP  de protocolo descentralizado desenvolvido para a tarefa da Unidade 1, Capítulo 5 — Desenvolvimento de Protocolo Web3 Completo com Deploy em Testnet.
 
 O objetivo do projeto é demonstrar a integração entre:
 
@@ -16,7 +16,7 @@ O objetivo do projeto é demonstrar a integração entre:
 - Testes com Hardhat
 - Auditoria com Hardhat, Slither e Mythril
 
-Este projeto tem finalidade educacional e foi desenvolvido como MVP acadêmico, não sendo destinado ao uso em produção.
+Este projeto tem finalidade educacional e foi desenvolvido como MVP , não sendo destinado ao uso em produção.
 
 ---
 
@@ -168,28 +168,17 @@ Crie um arquivo .env na raiz do projeto com:
 SEPOLIA_RPC_URL=SUA_RPC_DA_SEPOLIA
 PRIVATE_KEY=SUA_PRIVATE_KEY_DE_TESTE
 
-Importante:
 
-Não subir o arquivo .env para o GitHub.
-Usar apenas carteira de teste.
-Não usar carteira com fundos reais.
 10. Compilação
-
 Para compilar os contratos:
-
 npx hardhat compile
-
 Resultado obtido no projeto:
-
 Compiled 25 Solidity files successfully
+
 11. Testes
-
 Para executar os testes:
-
 npx hardhat test
-
 Resultado obtido:
-
 DocVerifyDAO
   ✔ deve criar o token ERC-20 com nome, simbolo e supply inicial corretos
   ✔ deve mintar um NFT de documento com tokenURI correto
@@ -200,7 +189,6 @@ DocVerifyDAO
 5 passing
 
 Os testes validam:
-
 Criação do token ERC-20
 Mint de NFT
 Staking de tokens
@@ -209,12 +197,9 @@ Bloqueio contra voto duplicado
 12. Scripts Web3
 
 Os scripts foram criados com ethers.js e Hardhat.
-
 Deploy local
 npx hardhat run scripts/deploy.js
-
 Esse script faz deploy dos contratos:
-
 DocToken
 DocumentNFT
 Staking
@@ -222,12 +207,9 @@ SimpleDAO
 PriceOracle
 
 Além disso, ele financia o contrato de staking com tokens DOC para recompensas.
-
 Mint de NFT
 npx hardhat run scripts/mintNFT.js
-
 Esse script demonstra:
-
 Deploy local do DocumentNFT
 Execução de mintDocument
 Consulta de ownerOf
@@ -237,7 +219,6 @@ Stake de tokens
 npx hardhat run scripts/stake.js
 
 Esse script demonstra:
-
 Deploy local do DocToken
 Deploy local do Staking
 Aprovação com approve
@@ -248,7 +229,6 @@ Votação na DAO
 npx hardhat run scripts/vote.js
 
 Esse script demonstra:
-
 Deploy local do DocToken
 Deploy local da SimpleDAO
 Criação de proposta
@@ -345,11 +325,8 @@ retorno parcial ignorado no oráculo
 alerta benigno relacionado ao _safeMint
 
 Os alertas foram registrados como pontos de atenção e recomendações de melhoria.
-
 Mythril
-
 O Mythril foi executado via Docker sobre o bytecode compilado do contrato Staking.sol.
-
 O Staking foi escolhido por ser um contrato sensível do projeto, pois movimenta tokens, calcula recompensas e executa saque.
 
 Resumo dos alertas:
@@ -377,27 +354,8 @@ O projeto demonstra os seguintes fluxos:
 8. Auditoria simples
 18. Limitações do MVP
 
-Este projeto é um MVP acadêmico. Portanto, algumas funcionalidades foram mantidas simples:
-
-Não possui sistema real de upload de documentos.
-Não possui marketplace.
-Não possui DAO avançada.
-Não possui tokenomics profissional.
-Não deve ser usado em produção.
-Não substitui auditoria profissional.
-19. Possíveis melhorias futuras
-Criar frontend completo.
-Implementar upload real de documentos via IPFS.
-Melhorar o cálculo de recompensa do staking.
-Integrar o preço do oráculo diretamente no cálculo de recompensa.
-Implementar governança mais robusta.
-Melhorar tratamento dos alertas apontados por Slither e Mythril.
-Verificar os contratos no Etherscan.
-Criar testes mais completos.
+Este projeto é um MVP . Portanto, algumas funcionalidades foram mantidas simples:
 20. Conclusão
-
-O DocVerifyDAO cumpre o objetivo de demonstrar um protocolo Web3 completo em formato de MVP acadêmico.
-
+O DocVerifyDAO cumpre o objetivo de demonstrar um protocolo Web3 completo em formato de MVP .
 O projeto integra token ERC-20, NFT ERC-721, staking, governança simplificada, oráculo Chainlink, scripts Web3 com ethers.js, deploy em testnet Sepolia, testes automatizados e auditoria simples.
-
 A implementação foi mantida simples para facilitar a compreensão e a demonstração dos conceitos estudados.
