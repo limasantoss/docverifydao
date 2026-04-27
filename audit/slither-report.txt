@@ -1,0 +1,124 @@
+'npx hardhat clean' running (wd: C:\Users\igorl\docverifydao)
+'npx hardhat clean --global' running (wd: C:\Users\igorl\docverifydao)
+Problem deserializing hardhat configuration, using defaults: Expecting value: line 1 column 1 (char 0)
+'npx hardhat compile --force' running (wd: C:\Users\igorl\docverifydao)
+INFO:Detectors:
+Detector: incorrect-exp
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) has bitwise-xor operator ^ instead of the exponentiation operator **: 
+	 - inverse = (3 * denominator) ^ 2 (node_modules/@openzeppelin/contracts/utils/math/Math.sol#184)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-exponentiation
+INFO:Detectors:
+Detector: divide-before-multiply
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse = (3 * denominator) ^ 2 (node_modules/@openzeppelin/contracts/utils/math/Math.sol#184)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#188)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#189)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#190)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#191)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#192)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#193)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- prod0 = prod0 / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#172)
+	- result = prod0 * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#199)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
+INFO:Detectors:
+Detector: unused-return
+PriceOracle.getLatestPrice() (contracts/PriceOracle.sol#31-41) ignores return value by (None,price,None,None,None) = priceFeed.latestRoundData() (contracts/PriceOracle.sol#32-38)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-return
+INFO:Detectors:
+Detector: reentrancy-benign
+Reentrancy in DocumentNFT.mintDocument(address,string) (contracts/DocumentNFT.sol#21-34):
+	External calls:
+	- _safeMint(to,newTokenId) (contracts/DocumentNFT.sol#28)
+		- retval = IERC721Receiver(to).onERC721Received(_msgSender(),from,tokenId,data) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#467-480)
+	State variables written after the call(s):
+	- _setTokenURI(newTokenId,uri) (contracts/DocumentNFT.sol#29)
+		- _tokenURIs[tokenId] = _tokenURI (node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol#58)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+INFO:Detectors:
+Detector: reentrancy-events
+Reentrancy in DocumentNFT.mintDocument(address,string) (contracts/DocumentNFT.sol#21-34):
+	External calls:
+	- _safeMint(to,newTokenId) (contracts/DocumentNFT.sol#28)
+		- retval = IERC721Receiver(to).onERC721Received(_msgSender(),from,tokenId,data) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#467-480)
+	Event emitted after the call(s):
+	- DocumentMinted(to,newTokenId,uri) (contracts/DocumentNFT.sol#31)
+	- MetadataUpdate(tokenId) (node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol#59)
+		- _setTokenURI(newTokenId,uri) (contracts/DocumentNFT.sol#29)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-4
+INFO:Detectors:
+Detector: timestamp
+SimpleDAO.vote(uint256,bool) (contracts/SimpleDAO.sol#67-84) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(proposals[proposalId].exists,Proposal does not exist) (contracts/SimpleDAO.sol#68)
+	- require(bool,string)(block.timestamp <= proposals[proposalId].deadline,Voting closed) (contracts/SimpleDAO.sol#69)
+Staking.claimReward() (contracts/Staking.sol#63-74) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(reward > 0,No rewards available) (contracts/Staking.sol#65)
+	- require(bool,string)(success,Reward transfer failed) (contracts/Staking.sol#71)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+INFO:Detectors:
+Detector: assembly
+ERC721._checkOnERC721Received(address,address,uint256,bytes) (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#465-482) uses assembly
+	- INLINE ASM (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#476-478)
+Strings.toString(uint256) (node_modules/@openzeppelin/contracts/utils/Strings.sol#24-44) uses assembly
+	- INLINE ASM (node_modules/@openzeppelin/contracts/utils/Strings.sol#30-32)
+	- INLINE ASM (node_modules/@openzeppelin/contracts/utils/Strings.sol#36-38)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) uses assembly
+	- INLINE ASM (node_modules/@openzeppelin/contracts/utils/math/Math.sol#130-133)
+	- INLINE ASM (node_modules/@openzeppelin/contracts/utils/math/Math.sol#154-161)
+	- INLINE ASM (node_modules/@openzeppelin/contracts/utils/math/Math.sol#167-176)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+INFO:Detectors:
+Detector: solc-version
+Version constraint ^0.8.20 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- VerbatimInvalidDeduplication
+	- FullInlinerNonExpressionSplitArgumentEvaluationOrder
+	- MissingSideEffectsOnSelectorAccess.
+It is used by:
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/access/Ownable.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/interfaces/IERC165.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/interfaces/IERC4906.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/interfaces/IERC721.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol#3)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/utils/Context.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/utils/Strings.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/utils/math/Math.sol#4)
+	- ^0.8.20 (node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol#4)
+	- ^0.8.20 (contracts/DocToken.sol#2)
+	- ^0.8.20 (contracts/DocumentNFT.sol#2)
+	- ^0.8.20 (contracts/PriceOracle.sol#2)
+	- ^0.8.20 (contracts/SimpleDAO.sol#2)
+	- ^0.8.20 (contracts/Staking.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+INFO:Detectors:
+Detector: immutable-states
+PriceOracle.priceFeed (contracts/PriceOracle.sol#24) should be immutable 
+SimpleDAO.governanceToken (contracts/SimpleDAO.sol#8) should be immutable 
+Staking.stakingToken (contracts/Staking.sol#9) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+INFO:Slither:. analyzed (26 contracts with 101 detectors), 21 result(s) found

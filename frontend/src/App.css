@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef1f5;
+  color: #222;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 86px;
+  background: linear-gradient(#1f68c8, #1451a1);
+  color: white;
+  padding: 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #0b3974;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border: 3px solid white;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.brand p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.primary-button,
+.blue-button,
+.green-button,
+.red-button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 12px 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.primary-button,
+.blue-button {
+  background: linear-gradient(#2d7be8, #1458c8);
+  border-color: #0d48a5;
+}
+
+.green-button {
+  background: linear-gradient(#3ebd62, #249444);
+  border-color: #187235;
+}
+
+.red-button {
+  background: linear-gradient(#ef5b5b, #cc3131);
+  border-color: #9c2020;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+.info-panel {
+  background: white;
+  border: 1px solid #cfd6df;
+  border-radius: 4px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.info-panel h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.info-panel p {
+  margin: 6px 0;
+}
+
+.info-panel span {
+  color: #666;
+}
+
+.address-list {
+  border-left: 1px solid #d8dde4;
+  padding-left: 28px;
+  font-family: Consolas, monospace;
+  font-size: 13px;
+}
+
+.address-list p {
+  word-break: break-all;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #cfd6df;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 16px 20px;
+  background: linear-gradient(#ffffff, #f2f4f7);
+  border-bottom: 1px solid #d8dde4;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #bfc8d3;
+  border-radius: 4px;
+  font-size: 15px;
+  margin-bottom: 22px;
+  background: white;
+  color: #222;
+  caret-color: #222;
+}
+
+input::placeholder {
+  color: #6b7280;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+}
+
+.price-box {
+  border: 1px solid #a9c7f7;
+  background: #edf5ff;
+  border-radius: 4px;
+  padding: 28px 14px;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+.log-card {
+  grid-column: span 2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  border-bottom: 1px solid #d8dde4;
+  padding: 10px;
+  text-align: left;
+}
+
+.badge {
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.success {
+  background: #d6f1dc;
+  color: #1a7731;
+}
+
+.badge.pending {
+  background: #fff1bf;
+  color: #8a6700;
+}
+
+.badge.erro {
+  background: #ffd7d7;
+  color: #9a1f1f;
+}
+
+.empty-log {
+  color: #777;
+}
+
+.footer {
+  max-width: 1180px;
+  margin: 30px auto 0;
+  padding: 18px 20px 30px;
+  border-top: 1px solid #cbd2da;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #1d5fc1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .log-card {
+    grid-column: span 1;
+  }
+
+  .info-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .address-list {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

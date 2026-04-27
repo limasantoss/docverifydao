@@ -1,0 +1,13 @@
+◇ injected env (2) from .env // tip: ⌘ suppress logs { quiet: true }
+  
+
+  DocVerifyDAO
+    ✔ deve criar o token ERC-20 com nome, simbolo e supply inicial corretos
+    ✔ deve mintar um NFT de documento com tokenURI correto
+    ✔ deve permitir approve e stake de tokens DOC
+    ✔ deve criar proposta e registrar voto na DAO
+    ✔ deve bloquear voto duplicado na DAO
+
+
+  5 passing (1s)
+
