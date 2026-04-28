@@ -215,7 +215,7 @@ function App() {
                 onChange={(event) => setDocumentUri(event.target.value)}
               />
               <button className="blue-button" onClick={mintNFT}>
-                Mint NFT
+                 Mint NFT
               </button>
             </div>
           </div>
