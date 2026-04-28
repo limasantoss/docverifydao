@@ -7,7 +7,7 @@ async function main() {
 
   console.log("Conta usada no deploy:", deployer.address);
 
-  // 1. Deploy do token ERC-20
+   // 1. Deploy do token ERC-20
   const DocToken = await ethers.getContractFactory("DocToken");
   const docToken = await DocToken.deploy(1000000);
   await docToken.waitForDeployment();
@@ -15,7 +15,7 @@ async function main() {
   const docTokenAddress = await docToken.getAddress();
   console.log("DocToken deployado em:", docTokenAddress);
 
-  // 2. Deploy do NFT ERC-721
+   // 2. Deploy do NFT ERC-721
   const DocumentNFT = await ethers.getContractFactory("DocumentNFT");
   const documentNFT = await DocumentNFT.deploy();
   await documentNFT.waitForDeployment();
