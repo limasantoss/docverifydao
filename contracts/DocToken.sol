@@ -9,7 +9,7 @@ contract DocToken is ERC20, Ownable {
         ERC20("DocVerify Token", "DOC") 
         Ownable(msg.sender) 
     {
-        _mint(msg.sender, initialSupply * 10 ** decimals());
+         _mint(msg.sender, initialSupply * 10 ** decimals());
     }
 
     function mint(address to, uint256 amount) external onlyOwner {
