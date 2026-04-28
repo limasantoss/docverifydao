@@ -10,7 +10,7 @@ describe("DocVerifyDAO", function () {
   let simpleDAO;
 
   beforeEach(async function () {
-    [owner, user] = await ethers.getSigners();
+     [owner, user] = await ethers.getSigners();
 
     const DocToken = await ethers.getContractFactory("DocToken");
     docToken = await DocToken.deploy(1000000);
