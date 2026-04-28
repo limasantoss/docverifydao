@@ -1,6 +1,6 @@
 # DocVerifyDAO
 
-Protocolo descentralizado para registro, autenticação e governança de documentos digitais via blockchain.
+ Protocolo descentralizado para registro, autenticação e governança de documentos digitais via blockchain.
 
 ## Visão Geral
 O DocVerifyDAO é um MVP que integra padrões de tokens, staking e governança para garantir a imutabilidade e rastreabilidade de documentos. O projeto utiliza a rede Sepolia para demonstração das funcionalidades Web3.
