@@ -1,4 +1,4 @@
-◇  injected env (2) from .env // tip: ⌘ suppress logs { quiet: true }
+ injected env (2) from .env // tip: ⌘ suppress logs { quiet: true }
   
 
   DocVerifyDAO
