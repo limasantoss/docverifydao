@@ -19,12 +19,6 @@ O DocVerifyDAO é um MVP que integra padrões de tokens, staking e governança p
 - Rede: Sepolia Testnet
 - Segurança: Slither, Mythril
 
-## Contratos (Sepolia)
-- DocToken: 0x1dcb477f671b3c3bF3d89255C828933e3Fc991a2
-- DocumentNFT: 0x1fEf44F206c15242D832EafD77d469CdE4B9e47B
-- Staking: 0x031e35EE1EdAfEfb448292A57190962695D23D5d
-- SimpleDAO: 0x7E842847A27084F9C6A77309A6F757EAE982B639
-- PriceOracle: 0xa1a8E48d5417FcbD288dEC5cC99d2f632BF46F90
 
 ## Instalação e Testes
 1. Instalar dependências:
