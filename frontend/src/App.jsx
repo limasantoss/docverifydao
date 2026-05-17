@@ -43,6 +43,16 @@ function App() {
   const addLog = (type, message) => {
     const time = new Date().toLocaleTimeString();
     setLogs((oldLogs) => [{ time, type, message }, ...oldLogs]);
+
+    if (import.meta.env.DEV) {
+      fetch("/__client-log", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ time, type, message }),
+      }).catch(() => {});
+    }
   };
 
   const getSigner = async () => {
