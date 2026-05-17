@@ -194,7 +194,7 @@ function App() {
         <button className="primary-button" onClick={connectWallet}>
           {account
             ? `${account.slice(0, 6)}...${account.slice(-4)}`
-            : "Connect Wallet"}
+            : "Conectar carteira"}
         </button>
       </header>
 
